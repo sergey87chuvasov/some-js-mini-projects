@@ -19,29 +19,35 @@ const products = [
 let order = [];
 
 function addToBasket(productId) {
-    // TODO: добавить проверку наличия товара в заказе (при наличии выдать alert, что товар уже в корзине)
+    // check only unicue good
+    if (order.find(el => el.id ===productId)) return alert('Good already in the cart')
+    
+    // get undefined if nothing found or element from [] collection
+    const product = products.find((item) => item.id === productId)
+    // add new obj of good (new arr // no mutation)
+    order = [...order, product]
 
-    // TODO: если товар еще не в корзине, добавить его из массива products
-
-    // Эти строчки не трогаем, они отвечают за переотрисовку страницы
+    // render page
     renderCart();
     rerenderTotalPrice();
 }
 
 function removeFromBasket(productId) {
-    // TODO: описать логику удаления товара из корзины
+    // del
+    order = order.filter(item => item.id !== productId)
 
-    // Эти строчки не трогаем, они отвечают за переотрисовку страницы
+    // render page
     renderCart();
     rerenderTotalPrice();
 }
 
 
 function rerenderTotalPrice() {
-    // TODO: опишите функционал подсчета общей стоимости заказа
-    const totalPrice;
+    // count common price
+    const totalPrice = order.reduce((acc, item) => {
+        return acc + item.price
+    }, 0)
 
-    // Не меняйте эту строчку
     document.getElementById('total').innerText = totalPrice;
 }
 
