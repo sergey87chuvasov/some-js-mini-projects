@@ -24,6 +24,7 @@ body {
     align-items: center;
     border-radius: 8px;
     padding: 0 15px;
+    overflow: hidden;
 }
 
 .container .login-box {
@@ -39,6 +40,25 @@ body {
 .page-box .page.password-side {
     position: absolute;
     transform: translateX(570px);
+    margin-top: 140px;
+    transition: .25s ease-in-out;
+}
+
+.page-box.active .page.password-side {
+    transform: translateX(0px);
+}
+
+.page-box .page.email-side {
+    transform: translateX(0px);
+}
+
+.page-box.active .page.email-side {
+    transform: translateX(-570px);
+    transition: .25s ease-in-out;
+}
+
+.page {
+    width: 100%;
 }
 
 .login-title {
