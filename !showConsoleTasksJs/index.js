@@ -187,3 +187,68 @@ Object.seal(obj20);
 obj20.name = 'Katya';
 obj20.car = 'Kia';
 console.log(obj20); // { name: 'Katya' }
+
+// 21 - Что выведет консоль ?
+// flat - Это метод, который создает новый массив со всеми элементами вложенного массива, 
+// рекурсивно объединенными с вышестоящим массивом до заданной глубины.
+const array21 = [1, 2, [3, 4]];
+console.log(array21.flat()); // [1, 2, 3, 4];
+
+// 22 - Что выведет консоль?
+const crazyArray22 = [1, 2, [3, 4], [[5], [6, [7,8]]]];
+console.log(crazyArray22.flat(Infinity)); // [1, 2, 3, 4, 5, 6, 7, 8];
+
+// 23 - Что выведет консоль?
+let arr23 = [1, 2, 3, 4, 5, 6];
+let evenNumbers23 = arr23.filter(num => num % 2 === 0);
+console.log(evenNumbers23); // [2, 4, 6]
+
+// 24 - Что выведет консоль?
+for (var i24 = 0; i24 < 5; i24++) {}
+console.log(i24) // 5
+
+// 25 - Что выведет консоль?
+// Объект Set позволяет хранить уникальные значения любого типа, будь то примитивные значения или ссылки на объекты.
+// Метод has() возвращает логическое значение, указывающее, существует ли элемент с указанным значением в объекте Set или нет. 
+// Он возвращает true, даже если добавленное значение не определено.
+
+const set25 = new Set();
+set25.add(undefined);
+console.log(set25.has(undefined)); // true
+
+// 26 - Что выведет консоль?
+// Метод JSON.stringify() преобразует значение JavaScript в строку JSON. У метода есть второй необязательный параметр replacer.
+const user26 = {
+    name: 'Serge',
+    age: 35,
+    email: 's@tut.by'
+}
+
+const data26 = JSON.stringify(user26,['name', 'age']);
+console.log(data26); // {"name":"Serge","age":35}
+
+// 26 - Что выведет консоль?
+console.log('9' > '19'); // true
+console.log('01' == '1'); // false
+
+// 27 - Что выведет консоль?
+const myArr27 = [1,2,'2',3,3,'3',4];
+const mySetArr27 = [...new Set(myArr27)];
+console.log(mySetArr27); // [ 1, 2, '2', 3, '3', 4 ]
+
+// 28 - Что выведет консоль?
+const myArr28 = [3,2,11,1];
+console.log(myArr28.sort()); // [ 1, 11, 2, 3 ]
+
+// 29 - Что выведет консоль?
+const numbers29 = [1,2,3,4,5];
+const [x29] = numbers29;
+console.log(x29); // 1
+
+// 30 - Что выведет консоль?
+// Деструктуризация работает с любыми итерируемыми объектами. Строка - итерируемая, число - нет.
+const [a30, ...x30] = 'hello';
+console.log(a30, x30); // h [ 'e', 'l', 'l', 'o' ]
+
+// const [a30_2, ...x30_2] = 12345;
+// console.log(a30_2, x30_2); // TypeError: 12345 is not iterable
