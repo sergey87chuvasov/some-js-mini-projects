@@ -101,3 +101,89 @@ function getName8() {
 // Мы передаем значение 'I love' в качестве аргумента стрелочной функции x => x. x равно 'I love', 
 // которое и возвращается. Это приводит к I love to program.
 console.log(`${(x => x)('i love')} to program`)
+
+//  10 - Что выведет консоль ?
+const person10 = {
+    name: 'Serge',
+}
+
+Object.freeze(person10);
+person10.name = 'Peter';
+console.log(person10.name); // Serge
+
+//  11 - Что выведет консоль ?
+// Этот метод используется для конвертации числа в число с указанной точностью.
+// Метод возвр значение в виде строки
+const num11 = 10.1122;
+const newNum11 = num11.toPrecision(3);
+console.log(typeof newNum11, newNum11); // string 10.1
+
+// 12- Что выведет консоль ?
+const num12 = true;
+console.log(Number(num12)); // 1
+const num12_2 = false;
+console.log(Number(num12_2)); // 0
+const num12_3 = '777';
+console.log(Number(num12_3)); // 777
+
+// 13 -  Что выведет консоль ?
+// Проверяем есть ли определенный элемент в массиве или нет
+const arr13 = [41,42,43,44];
+console.log(arr13.includes(44)); // true
+console.log(arr13.includes(45)); // false
+
+// 14 -  Что выведет консоль ?
+// spread оператор принимает массив и расширяет его на отдельные элементы
+const arr14 = [55,56,57,58,59];
+console.log(...arr14); // 55 56 57 58 59
+
+// 15 -  Что выведет консоль ?
+// метод reduce() - сводит массив к одному значению
+const arr15 = [1,2,3,4,5];
+const newArr15 = arr15.reduce((first, second) => first + second, 100);
+console.log(newArr15); // 115
+
+// 16 -  Что выведет консоль ?
+const arr16 = [1,2,3,4];
+const result16 = arr16.filter(item => item > 2);
+console.log(result16); // [ 3, 4 ]
+
+// 17 -  Что выведет консоль ?
+const arr17 = [1,2,3,4];
+const result17 = arr17.map(item => item > 2);
+console.log(result17); // [ false, false, true, true ]
+
+// 18-  Что выведет консоль ?
+const a18 = c => c;
+const b18 = c => c;
+console.log(a18 === b18); // false
+console.log(a18(4) === b18(4)); // true
+
+// 19 - Что выведет консоль ?
+// Object.entries() - возвр, обработав переданн ему объект, массив, содержащ массивы - ключ значение
+const user19 = {
+    name: 'Serge',
+    secondName: 'Ivanov',
+    age: 77,
+    car: 'kia'
+}
+
+console.log(Object.entries(user19));
+/*
+[
+  [ 'name', 'Serge' ],
+  [ 'secondName', 'Ivanov' ],
+  [ 'age', 77 ],
+  [ 'car', 'kia' ]
+]
+*/
+
+// 20 - Что выведет консоль ?
+// метод - Object.seal() - позволяет запечатать объект, предотвратив добавление новых свойств, при этом существ св-ва можно менять
+const obj20 = {
+    name: 'Anna'
+}
+Object.seal(obj20);
+obj20.name = 'Katya';
+obj20.car = 'Kia';
+console.log(obj20); // { name: 'Katya' }
