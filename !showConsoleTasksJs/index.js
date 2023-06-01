@@ -313,3 +313,90 @@ function addFive(num){
     return num + 5;
 }
 console.log(x40); // 5 + 1 -- 6+5=11 --11*2=22 -- 22-5=17; 17+10 =27 ОТВЕТ: 27;
+
+// 41 - Что выведет консоль?
+let a41 = ['Javascript js frontend'];
+let b41 = ['Javascript js frontend'];
+console.log(a41 == b41); // false
+
+// 42 - Что выведет консоль?
+const b42 = new Boolean(false);
+console.log('b42', b42, typeof b42); // object (typeof new Boolean(false) === 'object').
+console.log(!!b42, b42 ? 'true' : 'false', b42 == true); // true 'true' false
+const b42_2 = false;
+console.log(!!b42_2, b42_2 ? 'true' : 'false', b42_2 == true); // false 'false' false
+
+// 43 - Что выведет консоль?
+console.log([0, 1, 2, 3].reduce((a, b) => a + b)); // 6
+
+// 44 - Что выведет консоль?
+const obj44 = {
+    a: 'somestring',
+    b: 42
+  };
+  
+  for (const [key, value] of Object.entries(obj44)) {
+    console.log(`${key}: ${value}`);
+  }
+  /*
+    a: somestring
+    b: 42
+  */
+
+  // 45 - Что выведет консоль?
+  // Метод filter() создает новый массив со всеми элементами, которые проходят условие, реализованного предоставленной функцией.
+  let users45 = [
+    { id: 11, name: 'Adam', age: 23, group: 'editor' }, 
+    { id: 47, name: 'John', age: 28, group: 'admin' }, 
+    { id: 85, name: 'William', age: 34, group: 'editor' }, 
+    { id: 97, name: 'Oliver', age: 28, group: 'admin' } 
+  ]; 
+  
+  let res45 = users45.filter(it => it.group === 'admin'); 
+  
+  console.log(res45);
+/*
+    [
+  { id: 47, name: 'John', age: 28, group: 'admin' },
+  { id: 97, name: 'Oliver', age: 28, group: 'admin' }
+]
+*/
+
+// 46 - Что выведет консоль?
+// 7 - это число. Унарный + никак не преобразует его, поэтому в консоль выведется -7.
+const a46 = 7;
+console.log(+-a46); // -7
+
+// 47 - Что выведет консоль?
+console.log(eval('10*10+10')); // 110
+
+// 48 - Что выведет консоль?
+// Внутри блока if мы создали локальную переменную a, которая будет доступна только внутри этого блока
+let a48= 10; 
+
+if (a48 >= 3) { 
+  let a = 5; 
+} 
+
+const b48 = a48; 
+console.log(b48); // 10
+
+// 49 - Что выведет консоль?
+// a ??= b эквивалентно a ?? (а = б). 
+// Присваивание выполняется только в том случае, если a не определено или имеет значение null.
+let a49 = 0;
+let b49 = 5;
+console.log(a49 ??= b49); // 0
+
+let a49_2 = null;
+let b49_2 = 5;
+console.log(a49_2 ??= b49_2); //5
+
+// 50 - Что выведет консоль?
+// Метод keys() возвращает новый итератор массива Array Iterator, содержащий ключи каждого индекса в массиве.
+const arr50 = ['One', 'Two', 'Three', 'Four', 'Five'];
+const iterator50 = arr50.keys();
+
+for (const key of iterator50) {
+  console.log(key); // 0 1 2 3 4
+}
