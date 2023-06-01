@@ -252,3 +252,64 @@ console.log(a30, x30); // h [ 'e', 'l', 'l', 'o' ]
 
 // const [a30_2, ...x30_2] = 12345;
 // console.log(a30_2, x30_2); // TypeError: 12345 is not iterable
+
+// 31 - Что выведет консоль?
+// И str[index], и charAt(index) возвращают указанный символ из строки. Разница в том, что, 
+// если предоставленный вами параметр index выходит за пределы этого диапазона, charAt вернёт пустую строку, тогда как str[index] - undefined.
+const myCompany31 = 'helloWorld';
+console.log(myCompany31[25]); // undefined
+console.log(myCompany31.charAt(50)); // ''
+
+// 32 - Что выведет консоль?
+class Parent {};
+class Child extends Parent{};
+let item32 = new Child();
+console.log(item32 instanceof Child); // true
+console.log(item32 instanceof Parent); // true
+
+// 33 - Что выведет консоль?
+// Строки в JS сравниваются по значению. Несмотря на разную запись значения этих двух строк одинаковые.
+const str33_1 = 'How\nare\nyou';
+const str33_2 = `How
+are
+you`;
+console.log(str33_1 === str33_2); // true   /n
+
+// 34 - Что выведет консоль?
+const date34 = new Date('Mon May 01 2023');
+console.log(date34.getDate()); // 1 - day 1,2,3,4,5,6,7...31
+console.log(date34.getMonth()); // 4 // may - 0,1,2,3,4
+
+// 35 - Что выведет консоль?
+console.log(1 + 2 + '1'); // 31 
+console.log('1' + 1 + 2); // 112
+
+// 36 - Что выведет консоль?
+console.log(0 == '0'); // true
+console.log(0 === '0'); // false
+console.log(0 == []); // true
+console.log(0 === []); // false
+console.log('0' == []); // false
+console.log('0' === []); // false
+
+// 37 - Что выведет консоль?
+console.log(null > 0, null < 0, null == 0, null >= 0); // false false false true
+
+// 38 - Что выведет консоль?
+for (var i = 0; i < 10; i++) {}
+console.log(i); // 10 тк На итерации i = 9 , условие i < 10 вернет true а потом Снова проверка условия: 10 < 10 = false
+
+// 39 - Что выведет консоль?
+// Object.freeze(obj) замораживает только obj и его свойства. Он не замораживает значения этих свойств.
+const obj39 = {arr: ['foo']};
+Object.freeze(obj39);
+obj39.arr.push('test');
+console.log(obj39.arr.length); // 2
+
+// 40 - Что выведет консоль?
+let x40 = 5;
+x40 = (x40++ , x40 = addFive(x40), x40 *= 2, x40 -= 5, x40 += 10);
+function addFive(num){
+    return num + 5;
+}
+console.log(x40); // 5 + 1 -- 6+5=11 --11*2=22 -- 22-5=17; 17+10 =27 ОТВЕТ: 27;
