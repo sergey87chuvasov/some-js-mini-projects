@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+:root {
+    --clr: #0f1116;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--clr);
+}
+
+.sidebar {
+    position: absolute;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+    padding-left: 10px;
+}
+
+.sidebar ul {
+    position: relative;
+    height: 100vh;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style-type: none;
+}
+
+.sidebar ul li.logo {
+    margin-bottom: 50px;
+}
+
+.sidebar ul li.logo .icon{
+    font-size: 32px;
+    color: var(--clr);
+}
+
+.sidebar ul li.logo .text {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+.sidebar ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sidebar ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 70px;
+    font-size: 25px;
+    color: #333;
+    transition: 0.5s;
+}
+
+.sidebar ul li a .text {
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text {
+    color: var(--bg)
+}
