@@ -400,3 +400,64 @@ const iterator50 = arr50.keys();
 for (const key of iterator50) {
   console.log(key); // 0 1 2 3 4
 }
+
+// 51 - Что выведет консоль?
+function getPersonInfo51(one, two, three) {
+  console.log(one);
+  console.log(two);
+  console.log(three);
+}
+
+// При использовании шаблонных строк первым аргументом всегда будет массив строковых значений. 
+// Оставшимися аргументами будут значения переданных выражений!
+
+const person51 = 'Serge';
+const age51 = 35;
+getPersonInfo51 `${person51} is ${age51} old` // ["", " is ", " years old"] "Lydia" 21
+
+// 52 - Что выведет консоль?
+function sumValues52(x,y,z) {
+  return x + y + z
+}
+
+console.log(sumValues52(...[1,2,3])) // 6
+
+// 53 - Что выведет консоль?
+console.log('Hi, Dad!'[0]); // H
+
+// 54 - Что выведет консоль?
+// С помощью Object.seal мы можем предотвращать как добавление новых свойств, так и удаление существующих.
+// Однако, изменение существующих свойств остаётся доступным.
+const person54 = {name: 'Serge'};
+Object.seal(person54);
+
+// 55 - Что выведет консоль?
+const add55 = x => x + x;
+function myFunc55(num = 2, value = add55(num)) {
+  console.log(num, value)
+}
+
+console.log(myFunc55()); // 2 4
+console.log(myFunc55(3)); // 3 6
+
+// 56 - Что выведет консоль?
+const words56 = ['test', 'memory', 'invasion', 'kia', 'notifacation'];
+const result56 = words56.filter(word => word.length > 4);
+console.log(result56) // [ 'memory', 'invasion', 'notifacation' ]
+
+// 57 - Что выведет консоль?
+const moonLanding = new Date('July 20, 69 00:20:18');
+console.log(moonLanding.getFullYear()) // 1969
+
+// 58 - Что выведет консоль?
+let fn58 = function() {};
+
+console.log(!fn58() && fn58()); // undefined
+
+// 59 - Что выведет консоль?
+const arr59 = [1,2,3,4,5];
+console.log(Array.from(arr59, x => x + x)); // [ 2, 4, 6, 8, 10 ]
+
+// 60 - Что выведет консоль?
+const arr60 = [4,25,66];
+console.log(Math.abs(arr60)); // NaN
