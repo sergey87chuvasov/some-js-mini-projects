@@ -461,3 +461,61 @@ console.log(Array.from(arr59, x => x + x)); // [ 2, 4, 6, 8, 10 ]
 // 60 - Что выведет консоль?
 const arr60 = [4,25,66];
 console.log(Math.abs(arr60)); // NaN
+
+// 61 - Что выведет консоль?
+const watchLict61 = new Set();
+console.log(watchLict61.size); // 0
+
+watchLict61.add('test');
+console.log(watchLict61.size); // 1
+
+// 62 - Что выведет консоль?
+const result62 = '10' - 8 + true;
+console.log(result62); // 3  тк 2 + 1
+
+// 63 - Что выведет консоль?
+const words63 = ['hey', 'test', 'abcd'];
+const result63 = words63.concat(11, [22, [33]]);
+console.log(result63) // [ 'hey', 'test', 'abcd', 11, 22, [ 33 ] ]
+
+// 64 - Что выведет консоль?
+// Метод Object. fromEntries() принимает список пар ключ-значение и возвращает новый объект, 
+// свойства которого задаются этими записями
+
+const entries64 = new Map([
+  ['foo', 'arrghh'],
+  ['doo', 'tartkt']
+])
+
+const obj64 = Object.fromEntries(entries64);
+console.log(obj64) // { foo: 'arrghh', doo: 'tartkt' }
+
+// 65 - Что выведет консоль?
+const num65 = 11;
+console.log(num65 === 11 ? '11' : 'no 11'); // 11
+
+// 66 - Что выведет консоль?
+const obj66 = {55: 'tom', 77: 'bob', 99: 'jack'};
+console.log(Object.keys(obj66)); // [ '55', '77', '99' ]
+
+// 67 - Что выведет консоль?
+const values67 = [1,2,3,4,5,6,7,8,9];
+const [first67, ...rest67] = values67;
+const item67 = rest67[1];
+console.log(item67); // 3
+
+// 68 - Что выведет консоль?
+const numbers68 = [1,2,3,4,5];
+let sum68 = 0;
+
+for (let i = 0; i < numbers68.length; i++) {
+  sum68 += numbers68[i]
+}
+
+console.log(sum68); // 15
+
+// 69 - Что выведет консоль?
+console.log(1 + '2' + '333'); // 12333
+
+// 70 - Что выведет консоль?
+console.log(typeof typeof 'test'); // string
