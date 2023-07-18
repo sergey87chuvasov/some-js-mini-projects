@@ -519,3 +519,100 @@ console.log(1 + '2' + '333'); // 12333
 
 // 70 - Что выведет консоль?
 console.log(typeof typeof 'test'); // string
+
+// 71 - Что выведет консоль?
+// Метод join объединяет элементы массива в строку с указанным разделителем
+const nums71 = [11, 22, 33];
+const result71 = nums71.join();
+console.log(result71)
+
+// 72 - Что выведет консоль?
+const age72 = 100;
+const result72 = age72 >= 55 ? 'grandpapa' : 'superman';
+console.log(result72); // grandpapa
+
+// 73 - Что выведет консоль?
+const obj73 = {1: 'i', 2: 'love', 3: 'beer'};
+const set73 = new Set([1,2,3]);
+
+console.log(obj73.hasOwnProperty('1')); // truw
+console.log(obj73.hasOwnProperty(1)); // true
+console.log(set73.has('1')); // false
+console.log(set73.has(1)); // true
+
+// 74 - Что выведет консоль?
+const arr74 = [1,2,3,4,5];
+const result74 = arr74.map(x => {
+  setTimeout(() => console.log(x), 1000);
+  return x * 2;
+});
+console.log(result74); // [ 2, 4, 6, 8, 10 ] а потом 1 2 3 4 5
+
+// 75 - Что выведет консоль?
+let num75 = 101;
+
+try {
+  num75 = 2/ 0
+  
+} catch (error) {
+  delete num75
+} finally {
+  num75 = num75 * -1
+}
+
+console.log(num75) // -Infinity
+
+// 76 - Что выведет консоль?
+// keys возвращает массив строковых элементов, соответствующих именам перечисляемых свойств, 
+// найденных непосредственно в самом объекте
+const arr76 = ['aa', 'bb', 'cc'];
+const iterator76 = arr76.keys();
+console.log(iterator76); // Object [Array Iterator] {}
+
+for (const key of iterator76) {
+  console.log(key) // 0 1 2
+}
+
+
+// 77 - Что выведет консоль?
+let num77 = 10;
+
+const incNum = () => num77++;
+console.log(num77); // 10
+const incPassNum = number => number++;
+
+const num77_1 = incNum();
+const num77_2 = incPassNum(num77_1);
+console.log(num77_1); // 10
+console.log(num77_2); // 10
+
+// 78 - Что выведет консоль?
+const myObj78 = {
+  x: 1,
+  y: 2,
+  z: {
+    a: 3,
+    b: 4
+  }
+}
+
+const copyObj78 = { ... myObj78};
+copyObj78.z.a = 555;
+console.log(myObj78.z.a); // 555;
+
+// 79 - Что выведет консоль?
+const nums79 = [1,2,3,4,5,6,7,8,9];
+const odds79 = [];
+
+for (let i = 0; i < nums79.length; i++) {
+  if (nums79[i] % 2 !==0) {
+    odds79.push(nums79[i])
+  }
+}
+
+console.log(odds79); // [ 1, 3, 5, 7, 9 ]
+
+// 80 - Что выведет консоль?
+// Унарный плюс перед e выполняется в самом начале трансормируя его в NaN 
+const result80 = ('b' + 'e' + + 'e' + 'r').toLowerCase();
+console.log(result80); // benanr
