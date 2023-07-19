@@ -616,3 +616,76 @@ console.log(odds79); // [ 1, 3, 5, 7, 9 ]
 // Унарный плюс перед e выполняется в самом начале трансормируя его в NaN 
 const result80 = ('b' + 'e' + + 'e' + 'r').toLowerCase();
 console.log(result80); // benanr
+
+// 81 - Что выведет консоль?
+const nums81 = [1,2,3,4,5,6,7,8,9];
+const sum81 = nums81.reduce(function(currSum, currNum) {
+  return currSum + currNum
+}, 0);
+
+console.log(sum81); // 45
+
+// 82 - Что выведет консоль?
+const nums82 = [1,2,3,4,5,6];
+
+const squares82 = nums82.map(function(num) {
+  return num * num;
+})
+
+console.log(squares82); // [ 1, 4, 9, 16, 25, 36 ]
+
+// 83 - Что выведет консоль?
+const obj83 = {a: 11, b: 22};
+const arr83 = [3,4,5];
+const { a, b} = obj83;
+const [c83, ...d83] = arr83;
+console.log(a, b, c83, d83); // 11 22 3 [ 4, 5 ]
+
+// 84- Что выведет консоль?
+console.log(null || 2 || undefined); // 2
+
+// 85- Что выведет консоль?
+const arr85 = [1,2,3];
+const func85 = (x) => {
+  console.log(x);
+}
+
+arr85.forEach(func85); // 1 2 3
+
+// 86- Что выведет консоль?
+function a86(value) {
+  return true - value
+}
+
+var b86 = a86('4') + a86('-4') + a86('-4') + a86(4);
+console.log(b86) // true - '4' = -3; true - -'4' = 5 // 4  true - '-4'  true - 4 = -3
+
+// 87 - Что выведет консоль?
+const person87 = {
+  name: 'serge',
+  age: 30,
+  address: {
+    city: 'Minsk',
+    country: 'BLR'
+  }
+}
+
+const { name, age, address: { city, country}} = person87;
+console.log(name, age, city, country); // serge 30 Minsk BLR
+
+// 88 - Что выведет консоль?
+const myTeam = ['Arsenal', 'PSG', 'Bornmut', 'Milan'];
+const action = myTeam.pop();
+
+console.log(myTeam); // [ 'Arsenal', 'PSG', 'Bornmut' ]
+console.log(action); // Milan
+
+// 89 - Что выведет консоль?
+console.log(Math.round(17.51)); // 18
+
+// 90 - Что выведет консоль?
+function abc90() {
+  return typeof arguments;
+}
+
+console.log(abc90()) // object
