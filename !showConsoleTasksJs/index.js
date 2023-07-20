@@ -689,3 +689,92 @@ function abc90() {
 }
 
 console.log(abc90()) // object
+
+// 91 - Что выведет консоль?
+const obj91 = {a: 1, b: 2, c: 3};
+Object.prototype.keys = function() {
+  return Object.values(this).reverse()
+}
+console.log(obj91.keys()); // [ 3, 2, 1 ]
+
+// 92 - Что выведет консоль?
+let a92 = 20;
+let b92 = a92++;
+let c92 = ++a92;
+let d92 = (a92 = b92 + c92);
+console.log(a92, b92, c92, d92);
+
+// 93 - Что выведет консоль?
+// Метод flat() возвращает новый массив и уменьшает вложенность массива на заданное количество уровней.
+// Метод принимает необязательный аргумент depth — количество уровней, на которые нужно уменьшить вложенность. 
+// Значение по умолчанию — 1. Результатом вызова метода flat() будет новый массив меньшей вложенности.
+const arr93 = [
+  '1 stage',
+  [
+    '2 stage',
+    [
+      ' 3 stage'
+    ]
+  ]
+]
+
+const flat93 = arr93.flat();
+console.log(flat93);// [ '1 stage', '2 stage', [ ' 3 stage' ] ]
+
+// 94- Что выведет консоль?
+const arr94 = [1,2,3];
+const newArr94 = arr94.slice(0,2);
+console.log(newArr94); // [ 1, 2 ]
+
+// 95- Что выведет консоль?
+var b95 = 10;
+if (b95 % 3 === 0) {
+  var i93 = 10;
+}
+
+console.log(i93); // undefined  or 9 /3 => // 10
+
+// 96- Что выведет консоль?
+console.log(1 + '2' + '2'); // 122
+console.log(+'1' + '1' + '2'); // 112
+console.log('A' - 'B' + '2'); // NaN2
+console.log('A' - 'B' + 2); // NaN
+
+// 97- Что выведет консоль?
+let x97 = [1,2,3,4];
+x97.push(4);
+x97.pop();
+x97.unshift(0);
+console.log(x97); // [ 0, 1, 2, 3, 4 ]
+
+// 98- Что выведет консоль?
+const a98 = 1;
+
+function foo98() {
+  const b98 = 2;
+
+  function bar98() {
+    const c98 = 3;
+    console.log(a98 + b98 + c98);
+  }
+
+  bar98();
+}
+
+foo98(); // 6
+
+// 99- Что выведет консоль?
+let a99 = 10;
+
+function test99() {
+  console.log(a99);
+  let a99 = 20;
+}
+
+test99(); // ReferenceError
+
+// 100 - Что выведет консоль?
+const getlist100 = ([x, ...y]) => [x, y];
+const list100 = [1,2,3,4];
+
+console.log(getlist100(list100)); // [ 1, [ 2, 3, 4 ] ]
