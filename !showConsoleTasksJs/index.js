@@ -778,3 +778,72 @@ const getlist100 = ([x, ...y]) => [x, y];
 const list100 = [1,2,3,4];
 
 console.log(getlist100(list100)); // [ 1, [ 2, 3, 4 ] ]
+
+// 101 - Что выведет консоль?
+console.log('2' + 2 - '1'); // 21
+
+// 102 - Что выведет консоль?
+let date102 = new Date('December 25, 1995 23:15:30');
+let result102 = date102.getHours();
+console.log(result102); //23
+
+// 103 - Что выведет консоль?
+// Метод массива .every() позволяет узнать, удовлетворяют ли все элементы в массиве условию в функции-колбэке
+const users103 = [
+  {name : 'Serge', online: true},
+  {name : 'Anna', online: true},
+  {name : 'Peter', online: true},
+]
+
+const isOnline = users103.every(user => {
+  return user.online
+})
+
+console.log(isOnline); // true
+
+// 104 - Что выведет консоль?
+// indexOf() - ищет вхождение элемента в массив или подстроки в строку и возвращает индекс.
+const example104 = ['apple', 'grape', 'vine'];
+console.log(example104.indexOf('grape')); // 1
+console.log(example104.indexOf('rrrrr')); // -1
+
+// 105 - Что выведет консоль?
+for ( i = 5; i < 8; i++) {
+  for (j = i; j < i + 1; j++) {
+    console.log(j); // 5 6 7
+  }
+}
+
+// 106 - Что выведет консоль?
+let a106 = 3;
+let b106 = new Number(3);
+let c106 = 3;
+
+console.log(a106 == b106); // true
+console.log(a106 === b106); // fALSE
+console.log(b106 === c106); // false
+
+// 107 - Что выведет консоль?
+// Статический метод Array.isArray() проверяет, является ли переданный аргумент массивом. 
+const arr107 = [1,2,3,4,5,6];
+const emptyArr107 = [];
+const bool107 = true;
+const num107 = 5;
+
+console.log(Array.isArray(arr107)); // true
+console.log(Array.isArray(emptyArr107)); // true
+console.log(Array.isArray(bool107)); // false
+console.log(Array.isArray(num107)); // false
+
+// 108 - Что выведет консоль?
+console.log([1 + 2, 1 * 2, 1 / 2]); // [ 3, 2, 0.5 ]
+
+// 109 - Что выведет консоль?
+console.log(!['test']); // false
+console.log(![]); // false
+console.log(!![null]); // true
+
+// 110 - Что выведет консоль?
+console.log([1,2] + [3,4]); // 1,23,4
+console.log(null == undefined); // true
+console.log(null === undefined); // false
