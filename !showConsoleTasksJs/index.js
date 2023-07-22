@@ -918,3 +918,89 @@ console.log(Promise.resolve('test')); // Promise {<fulfilled>: 'test'}  - в к
 // 120 - Что выведет консоль?
 const arr120 = Array.from('invasion');
 console.log(arr120); // (8) ['i', 'n', 'v', 'a', 's', 'i', 'o', 'n']
+
+// 121 - Что выведет консоль?
+const a121 = {
+  x: 10,
+  y: 20,
+  z: 30
+};
+
+const b121 = { ...a121, y: 999};
+console.log(a121); // { x: 10, y: 20, z: 30 }
+console.log(b121); // { x: 10, y: 999, z: 30 }
+
+// 122 - Что выведет консоль?
+const nums122 = [1,2,3,4,5,6,7,8,9,10];
+const evenOnly = nums122.filter(function(n) {
+  const remainder = n % 2;
+  console.log(remainder); // 1 0 1 0 1 0 1 0 1 0
+  return remainder === 0;
+})
+
+console.log(evenOnly); // [ 2, 4, 6, 8, 10 ]
+
+// 123 - Что выведет консоль?
+const a123 = () => console.log('a');
+const b123 = () => console.log('b');
+
+setTimeout(a123, 1000); // a
+setTimeout(b123, 1000); // b
+
+// 124 - Что выведет консоль?
+const obj124 = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+
+for (const prop in obj124) {
+  console.log(prop); // a b c
+}
+
+// 125 - Что выведет консоль?
+let x125 = 1;
+let y125 = 2;
+let z125 = x125+++y125;
+console.log(z125); // 3 тк 1+2
+
+// 126 - Что выведет консоль?
+// Возвращает число, полученное из разобранной строки или NaN, 
+// если первый символ не удалось преобразовать в число.
+console.log(parseFloat('12.12')); // 12.12
+console.log(parseFloat('12')); // 12
+console.log(parseFloat('    12.12')); // 12.12
+console.log(parseFloat('abc')); // NaN
+
+// 127 - Что выведет консоль?
+const a127 = [1,2,3,4,5];
+const b127 = a127.slice(0,2);
+b127.push(676);
+
+console.log(a127); // [ 1, 2, 3, 4, 5 ]
+console.log(b127); // [ 1, 2, 676 ]
+
+// 128 - Что выведет консоль?
+var x128 = 10;
+function foo128() {
+  console.log(x128); // undefined
+  var x128 = 5;
+  console.log(x128); // 5
+}
+
+foo128();
+
+// 129 - Что выведет консоль?
+var b129 = 10;
+
+if(b129 % 3 == 0) {
+  var i129 = 20;
+}
+
+console.log(i129); // undefined  9 => 20
+
+// 130 - Что выведет консоль?
+let array130 = [1,2,3,4,5];
+array130.unshift(1);
+
+console.log(array130); // [ 1, 1, 2, 3, 4, 5 ]
