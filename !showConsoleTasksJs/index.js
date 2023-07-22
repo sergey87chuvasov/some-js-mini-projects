@@ -847,3 +847,74 @@ console.log(!![null]); // true
 console.log([1,2] + [3,4]); // 1,23,4
 console.log(null == undefined); // true
 console.log(null === undefined); // false
+
+// 111 - Что выведет консоль?
+// clearTimeout() - очищает таймаут установленный с помощью setTimeout()
+const timerId = setTimeout(() => {
+  console.log('Прошла секунда')
+})
+
+clearTimeout(timerId); //-
+
+// 112 - Что выведет консоль?
+function myFunc112(a,b,c) {
+  arguments[2] = 99;
+  console.log(c)
+}
+
+myFunc112(10, 20 ,30); // 99
+
+// 113 - Что выведет консоль?
+function test113() {
+  var x = 101;
+  if(x > 99) {
+    x = 77;
+  }
+  console.log(x); // 77
+}
+
+test113();
+
+// 114 - Что выведет консоль?
+const arr114 = [1,2,3];
+const sum114 = arr114.reduce((acc, val) => {
+  return acc + val * 2
+}, 0);
+
+console.log(sum114); // 12
+
+// 115 - Что выведет консоль?
+// Этот метод используется для добавления символов в начале строки, 
+// чтобы результирующая строка достигла указанной длины.
+var str115 = "15"
+var newStr115 = str115.padStart(4, "3")
+console.log(newStr115); // 3315
+
+// 116 - Что выведет консоль?
+let a116 = 10;
+let b116 = 20;
+let c116 = 50;
+
+let result116 = (a116 + b116) * c116 / a116;
+console.log(result116); 150
+
+// 117 - Что выведет консоль?
+let a117 = 10;
+setTimeout(() => {
+  a117 = 99;
+},0)
+
+console.log(a117); //10  ,1000 => 10
+
+// 118 - Что выведет консоль?
+const a118 = [1,2,3,5];
+const b118 = a118;
+b118.push(999);
+console.log(a118); // [ 1, 2, 3, 5, 999 ]
+
+// 119 - Что выведет консоль?
+console.log(Promise.resolve('test')); // Promise {<fulfilled>: 'test'}  - в консоле
+
+// 120 - Что выведет консоль?
+const arr120 = Array.from('invasion');
+console.log(arr120); // (8) ['i', 'n', 'v', 'a', 's', 'i', 'o', 'n']
