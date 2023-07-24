@@ -1104,3 +1104,63 @@ let other140 = item => item * 5.5;
 let arrFrom140 = Array.from([0, 3, 5.5], other140);
 let result140 = arrFrom140.join("-");
 console.log(result140); // 0-16.5-30.25
+
+// 141 - Что выведет консоль?
+const obj141 = {};
+obj141['1'] = 1;
+obj141[1] = 1;
+obj141[null] = 1;
+obj141['null'] = 1;
+
+console.log(Object.values(obj141).length); // 2
+
+// 142 - Что выведет консоль?
+// Функция isNaN() определяет является ли литерал или переменная нечисловым значением (NaN) или нет.
+console.log(isNaN()); // true
+console.log(isNaN(undefined)); // true
+console.log(isNaN({})) // true
+
+// 143 - Что выведет консоль?
+const numbers143 = [33, 2, 8];
+numbers143.sort();
+console.log(numbers143[1]); // 33
+
+// 144 - Что выведет консоль?
+const x144 = [1,2,3,4,5,6];
+console.log(x144.slice(1, 3)); // [ 2, 3 ]
+
+// 145 - Что выведет консоль?
+let obj145 = {a: 1, b: 2};
+let arr145 = [3, 4];
+let str145 = 'Hello World';
+
+console.log(obj145.a, arr145[0], str145.length, arr145.length, obj145.c); // 1 3 11 2 undefined
+
+// 146 - Что выведет консоль?
+let squares146 = [2, 4, 6].map(x => x * x);
+[a146, b146] = squares146;
+console.log(a146 + b146); // 20
+
+// 147 - Что выведет консоль?
+const x147 = [1,2,3,4,5];
+const y147 = x147.reverse();
+console.log(x147 === y147); // true
+
+// 148 - Что выведет консоль?
+console.log('test script.' instanceof String); // false
+
+// 149 - Что выведет консоль?
+var x149 = 5;
+(function() {
+  console.log(x149); // undef
+  var x149 = 10;
+  console.log(x149); // 10
+})();
+
+// 150 - Что выведет консоль?
+// потеря точности 
+const a150 = 0.1;
+const b150 = 0.2;
+const c150 = 0.3;
+
+console.log(a150 + b150 === c150); // false
