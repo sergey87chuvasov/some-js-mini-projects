@@ -1004,3 +1004,103 @@ let array130 = [1,2,3,4,5];
 array130.unshift(1);
 
 console.log(array130); // [ 1, 1, 2, 3, 4, 5 ]
+
+// 131 - Что выведет консоль?
+// Метод values() возвращает значения объекта.
+const object131 = {
+  name: 'Jo',
+  age: 25,
+};
+console.log(Object.values(object131)); // [ 'Jo', 25 ]
+
+
+// 132 - Что выведет консоль?
+const object132 = {
+  name: 'Jo',
+  age: 28,
+};
+console.log(Object.keys(object132)); // [ 'name', 'age' ]
+
+// 133 - Что выведет консоль?
+// В данной задаче используется оператор запятая, следовательно будут выполняться все действия слево направо.
+let num133 = 13;
+const minusEight133 = x => x - 8;
+
+num133 = (num133--, num133 *= 3, num133 = minusEight133(num133), num133 -= 4);
+
+console.log(num133); // 24
+/*
+1) 13-- = 12
+2) 12 *=3 = 36
+3) 36 - 8 = 28
+4) 28 -= 4 = 24
+*/
+
+// 134 - Что выведет консоль?
+// Метод Math.log2() возвращает двоичный (по основанию 2) логарифм числа.
+// 2 в степени result должно быть равно 32. Это 5.
+const num134 = 32;
+const result134 = Math.log2(num134);
+console.log(result134); //5 2*2*2*2*2
+
+
+// 135 - Что выведет консоль?
+// Объект arguments - это объект типа Array, соответствующий агрументам, переданным в функцию. 
+// Объект arguments не является массивом. 
+// Он похож на массив, но не имеет никаких свойств массива, кроме длины (length). У него нет метода join().
+const func135 = function () {
+  return arguments.join("");
+}
+const front_tests135 = func135(43, 78);
+console.log(front_tests135); // arguments.join is not a function
+
+// 136 - Что выведет консоль?
+// Вызов Promise создают так называемую микро таску (микро задачу), а setTimeout создаёт макро таску. 
+// Микро таска будет выполнена быстрее, поэтому выведется 'three', а уже после 'two'.
+console.log('one');
+setTimeout(function() {
+  console.log('two');
+}, 0);
+Promise.resolve().then(function() {
+  console.log('three');
+})
+console.log('four');  // one four three two
+
+// 137 - Что выведет консоль?
+// метод foreach не будет вызвана для удалённых или пропущенных элементов массива. 
+// Однако, она будет вызвана для элементов, которые присутствуют в массиве и имеют значение undefined.
+const array137 = [1, 3, , 7];
+array137.forEach((element) => {
+  console.log(element); // 1 3 7
+});
+
+// 138 - Что выведет консоль?
+// Оператор запятой оценивает каждый из своих операндов(слева направо) 
+// и возвращает значение последнего операнда. В нашем случае это 5
+const func138_1 = () => true; 
+const func138_2 = () => 'Hello world'; 
+const func138_3 = () => 5;
+const front_tests138 = (func138_1(), func138_2(), func138_3()); 
+console.log(front_tests138); // 5
+
+// 139 - Что выведет консоль?
+// Метод push() добавляет один или несколько элементов в конец массива и возвращает новую длину массива.
+// Метод apply() вызывает функцию с переданным значением this и аргументами, предоставленными в виде массива. 
+// Это то же самое, что и const front_tests = arr1.push(...arr2);
+const push139 = Array.prototype.push; 
+const arr1_139 = [100, 200]; 
+const arr2_139 = [200, 100]; 
+const front_tests139 = push139.apply(arr1_139, arr2_139); 
+console.log(front_tests139); // 4
+
+// 140 - Что выведет консоль?
+/*
+Array.from() имеет необязательный параметр mapFn, который позволяет вам выполнять функцию map для каждого элемента 
+создаваемого массива (или его подкласса). 
+Проще говоря, вызов Array.from(obj, mapFn, thisArg) эквивалентен цепочке 
+Array.from(obj).map(mapFn, thisArg), за исключением того, что он не создаёт промежуточного массива.
+*/
+let other140 = item => item * 5.5;
+let arrFrom140 = Array.from([0, 3, 5.5], other140);
+let result140 = arrFrom140.join("-");
+console.log(result140); // 0-16.5-30.25
