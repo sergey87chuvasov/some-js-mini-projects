@@ -1164,3 +1164,78 @@ const b150 = 0.2;
 const c150 = 0.3;
 
 console.log(a150 + b150 === c150); // false
+
+// 151 - Что выведет консоль?
+let array151 = [1,2,3];
+array151[6] = 9;
+console.log(array151[5]); // undef
+
+// 152 - Что выведет консоль?
+// When using numeric keys, the values are returned in the keys' numerical order
+const scram152 = {2: 'e', 5: 'o', 1: 'h', 4: 'l', 3: 'l'};
+console.log(Object.values(scram152)) // [ 'h', 'e', 'l', 'l', 'o' ]
+const result152 = Object.values(scram152).reduce((agg, el) => agg + el, '');
+console.log(result152); // hello
+
+// 153 - Что выведет консоль?
+// Метод flat() возвращает новый массив и уменьшает вложенность массива на заданное количество уровней.
+const arr153 = [1, [2, [3, [4, [5, [6, [7], 8], 9], 10]]], 12];
+const result153 = arr153.flat(5);
+console.log(result153); // [1, 2, 3, 4, 5, 6, [7], 8, 9, 10, 12]
+
+// 154 - Что выведет консоль?
+const person154 = {
+  name: "John",
+  introduction: function() {
+    console.log(`My name is ${this.name}`);
+  }
+};
+const me154 = Object.create(person154);
+me154.name = 'Robert'; 
+me154.introduction(); // My name is Robert
+
+// 155 - Что выведет консоль?
+console.log(1 + '1'); // 11
+console.log('1' - 1); // 0
+
+// 156 - Что выведет консоль?
+function getUser156() {
+  return {
+    name: 'Jhon',
+    age: 30,
+  }
+}
+
+const user156 = getUser156();
+console.log(user156.name);
+
+// 157 - Что выведет консоль?
+console.log(Math.round(15.52)); //16
+console.log(Math.ceil(15.52)); // 16
+console.log(Math.round(15.2)); // 15
+console.log(Math.ceil(15.3)); // 16
+console.log(Math.floor(15.3)); // 15
+console.log(Math.floor(-15.3)); // -16
+console.log(Math.floor(15.52)); // 15
+console.log(Math.trunc(15.52)); // 15
+console.log(Math.trunc(-15.3)); // -15
+/*
+✓  round() — округление по обычным правилам;
+✓  floor() — округление вниз;
+✓  ceil() — округление вверх;
+✓  trunc() — отбрасывание дробной части, не обращая внимания на знак аргумента.
+*/
+
+// 158 - Что выведет консоль?
+const isTrue158 = true == []; // false
+const isFalse158 = true ==![]; // false
+console.log(isTrue158, isFalse158, isTrue158 + isFalse158); // 0
+
+// 159 - Что выведет консоль?
+let arr159 = [1,2,3,4,5];
+let newArr159 = arr159.filter(num => num > 2).map(num => num * 2);
+console.log(newArr159); // [ 6, 8, 10 ]
+
+// 160 - Что выведет консоль?
+console.log(Math.PI); // 3.141592653589793
+console.log(Math.abs(-118)); // 118
