@@ -76,6 +76,37 @@ body {
     align-items: center;
 }
 
+.requirement-list li.valid i {
+    font-size: 22px;
+    color: #2039aa;
+}
+
 .content .requirement-list li span {
     margin-left: 12px;
+}
+
+.requirement-list li.valid span {
+    color: #999;
+}
+
+@media screen and (max-width: 500px) {
+    body, .wrapper {
+        padding: 12px;
+    }
+
+    .wrapper .pass-field {
+        height: 55px;
+    }
+
+    .pass-field input, .content p {
+        font-size: 18px;
+    }
+
+    .pass-field i, .requirement-list li {
+        font-size: 16px;
+    }
+
+    .requirement-list li span {
+        margin-left: 8px;
+    }
 }
