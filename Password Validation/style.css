@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #4c4cdb;
+}
+
+.wrapper {
+    background: #fff;
+    width: 450px;
+    padding: 28px;
+    border-radius: 7px;
+}
+
+.wrapper .pass-field {
+    height: 65px;
+    width: 100%;
+    position: relative;
+}
+
+.pass-field input {
+    width: 100%;
+    height: 100%;
+    padding: 0 17px;
+    font-size: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.pass-field i {
+    right: 18px;
+    position: absolute;
+    top: 50%;
+    color: #999;
+    font-size: 18px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.wrapper .content {
+    margin: 20px 10px;
+}
+
+.content p {
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.content .requirement-list {
+    margin-top: 20px;
+}
+
+.content .requirement-list li {
+    list-style: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.content .requirement-list li i {
+    font-size: 12px;
+    color: #aaa;
+    width: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .requirement-list li span {
+    margin-left: 12px;
+}
