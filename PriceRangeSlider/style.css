@@ -52,7 +52,7 @@ header p {
     margin-left: 12px;
     border: 1px solid #999;
     border-radius: 5px;
-    -moz-appearance: none;
+    -moz-appearance: textfield;
 }
 
 input[type='number']::-webkit-outer-spin-button,
@@ -105,4 +105,14 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     background: #171677;
     pointer-events: auto;
+}
+
+input[type='range']::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    -moz-appearance: none;
+    background: #171677;
+    pointer-events: auto;
+    border: none;
 }
