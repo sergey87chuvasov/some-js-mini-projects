@@ -45,6 +45,7 @@ body {
 
 .content ul {
     display: flex;
+    flex-wrap: wrap;
     padding: 7px;
     margin: 12px 0;
     border: 1px solid #a6a6a6;
