@@ -1239,3 +1239,82 @@ console.log(newArr159); // [ 6, 8, 10 ]
 // 160 - Что выведет консоль?
 console.log(Math.PI); // 3.141592653589793
 console.log(Math.abs(-118)); // 118
+
+// 161 - Что выведет консоль?
+let count161 = 0;
+const nums161 = [0,1,2,3];
+nums161.forEach(num => {
+  if(num) count161 += 1
+})
+
+console.log(count161); // 3
+
+// 162 - Что выведет консоль?
+const a162 = '5';
+const b162 = 10;
+
+console.log(a162 * b162); // 50
+
+// 163 - Что выведет консоль?
+var arr163 = [2.1,3.5,4.7]; 
+var result163 = arr163.map((num) => 2 * num );  
+console.log(result163); // [ 4.2, 7, 9.4 ]
+
+// 164 - Что выведет консоль?
+// every() - Этот метод используется для проверки того, удовлетворяют ли элементы указанного массива 
+// определенному условию. Если все элементы удовлетворяют условию, метод возвращает true, 
+// в противном случае — false
+const ages164 = [32, 33, 16, 40];
+function checkAge164(age) {
+  return age > 18;
+}
+console.log(ages164.every(checkAge164)); // false
+
+// 165 - Что выведет консоль?
+// includes() - При помощи метода includes() можно проверить, есть ли определенный элемент в массиве. 
+// Если указанный элемент в массиве присутствует, возвращается true.
+const ages165 = [32, 33, 16, 40];
+console.log(ages165.includes(33)); // true
+console.log(ages165.includes(333)); // false
+
+// 166 - Что выведет консоль?
+// for…of iterator - Этот оператор выполняет цикл обхода итерируемых объектов.
+
+const ages166 = [33, 32, 16];
+for (const element of ages166) {
+  console.log(element + "b"); // 33b 32b 16b
+}
+
+// 167 - Что выведет консоль?
+// Math.max() - Возвращает наибольшее из переданных чисел.
+const maxNum167 = Math.max(5,2,9,1);
+console.log(maxNum167); // 9
+// Math.min() - Возвращает наименьшее из переданных чисел
+const minNum167 = Math.min(5,2,9,1);
+console.log(minNum167); // 1
+
+
+// 168 - Что выведет консоль?
+// Метод lastIndexOf() возвращает последний индекс, по которому данный 
+// элемент может быть найден в массиве или -1, если такого индекса нет
+const arr168 = ['0', '1', '2', 3, 1, 2];
+console.log(arr168.lastIndexOf(1)); // 4
+console.log(arr168.lastIndexOf('1')); // 1
+console.log(arr168.lastIndexOf('1111')); // -1
+
+// 169 - Что выведет консоль?
+let b169 = '4';
+// console.log(b169++); // 4
+// console.log(b169); // 5
+console.log(b169++ +3); // 7
+
+// 170 - Что выведет консоль?
+let i170 = 0;
+const arr170 = new Array(5); // [ <5 empty items> ]
+console.log(arr170)
+const arr170_1 = new Array(5,5,5); // [ <5 empty items> ]
+console.log(arr170_1); // [ 5, 5, 5 ]
+arr170.forEach(() => i170++);
+console.log(i170); // 0
+arr170.forEach((item) => i170++);
+console.log(i170); // 0
