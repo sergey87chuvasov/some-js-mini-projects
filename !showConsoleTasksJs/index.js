@@ -1318,3 +1318,70 @@ arr170.forEach(() => i170++);
 console.log(i170); // 0
 arr170.forEach((item) => i170++);
 console.log(i170); // 0
+
+// 171 - Что выведет консоль?
+const arr171 = [1,2,3,4];
+const res171 = arr171.filter(it => it > 2);
+console.log(res171); // [ 3, 4 ]
+
+// 172 - Что выведет консоль?
+const arr172 = [1,2,3,4];
+const res172 = arr172.map(it => it > 2);
+console.log(res172); // [ false, false, true, true ]
+
+// 173 - Что выведет консоль?
+// Остановить функцию setInterval
+
+let intervalId173 = setInterval(() => console.log('tick'), 1000);
+ 
+// остановимся через 10 секунд:
+setTimeout(() => { clearInterval(intervalId173); console.log('stop'); }, 10000);
+
+// 174 - Что выведет консоль?
+function example174() {   
+  return   {     value: 'test'   } 
+}; 
+
+console.log(example174()); // { value: 'test' }
+
+// 175 - Что выведет консоль?
+const myArr175 = ['a', 'b', 'c'];
+const myMap175 = {a: 1, b: 2, c: 3};
+
+const result175 = myArr175.map((letter) => myMap175[letter]);
+console.log(result175); // [ 1, 2, 3 ]
+
+// 176 - Что выведет консоль?
+const arr176 = [1,2,3];
+const arr176_2 = arr176;
+
+arr176_2.push(4);
+console.log(arr176); // [ 1, 2, 3, 4 ]
+
+// 177 - Что выведет консоль?
+function printSmth177() {
+  console.log(something177)
+}
+
+function invPrintSmth177() {
+  var something177 = 3;
+  printSmth177()
+}
+
+var something177 = 2;
+invPrintSmth177(); // 2
+
+// 178 - Что выведет консоль?
+const mySet178 = new Set([{a: 1}, {a: 1}]);
+console.log(mySet178) // Set(2) { { a: 1 }, { a: 1 } }
+const result178 = [...mySet178];
+console.log(result178); // [ { a: 1 }, { a: 1 } ]
+
+// 179 - Что выведет консоль?
+console.log(null || 2 && 3 || 4); // 3
+
+// 180 - Что выведет консоль?
+const obj180_1 = {x: 10};
+const obj180_2 = obj180_1;
+obj180_1.x += 5;
+console.log(obj180_2); // { x: 15 }
