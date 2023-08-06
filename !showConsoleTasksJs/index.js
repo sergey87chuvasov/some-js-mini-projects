@@ -1385,3 +1385,62 @@ const obj180_1 = {x: 10};
 const obj180_2 = obj180_1;
 obj180_1.x += 5;
 console.log(obj180_2); // { x: 15 }
+
+// 181 - Что выведет консоль?
+const a181 = '55';
+const b181 = 55;
+console.log(a181 == b181 && a181 === b181); // false
+
+// 182 - Что выведет консоль?
+const a182 = [1,2,3];
+const b182 = [...a182, 4 ,5];
+console.log(b182); // [ 1, 2, 3, 4, 5 ]
+
+// 183 - Что выведет консоль?
+console.log(new String('test') instanceof String); // true
+
+// 184 - Что выведет консоль?
+const a184 = {firstName: 'Serge'};
+const b184 = a184;
+b184.firstName = 'Serge';
+console.log(a184); // { firstName: 'Serge' }
+
+// 185 - Что выведет консоль?
+const arr185 = [...new Set([3,1,2,3,4])];
+console.log(arr185); // [ 3, 1, 2, 4 ]
+console.log(arr185.length, arr185[2]); // 4   2
+
+// 186 - Что выведет консоль?
+let colors186 = ['white', 'red', 'black'];
+colors186.length = 0;
+console.log(colors186); // []
+
+colors186.push('green');
+console.log(colors186); // [ 'green' ]
+
+// 187 - Что выведет консоль?
+let x187 = new Array(4).toString();
+console.log(x187); // ,,,
+
+// 188 - Что выведет консоль?
+let a188 = false;
+if(a188 == '0') {
+  console.log('==') // ==
+}
+if (a188 === '0') {
+  console.log('===')
+}
+
+// 189 - Что выведет консоль?
+if (-1 || 0) console.log ('first');  // -1 (true) // first
+if (-1 && 0) console.log ('second');  // 0 (false) // -
+if (null || -1 && 1) console.log ('thrd');  // 1 (true) thrd
+
+// 190 - Что выведет консоль?
+const x190 = async () => {
+  const y190 = await Promise.resolve('Hello');
+  console.log(y190)
+}
+console.log(1); // 1 2 Hello
+x190();
+console.log(2);
