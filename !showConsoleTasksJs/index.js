@@ -1444,3 +1444,66 @@ const x190 = async () => {
 console.log(1); // 1 2 Hello
 x190();
 console.log(2);
+
+// 191 - Что выведет консоль?
+const arr191_1 = ["apple", "banana", "cherry"]; 
+const arr191_2 = arr191_1.map((item, index) => { return index }); 
+console.log(arr191_2); // [ 0, 1, 2 ]
+
+// 192 - Что выведет консоль?
+let arr192 = [1,2,3,4,5,6,7,8,9];
+let newArr192 = arr192.slice(0,2);
+console.log(newArr192); // [ 1, 2 ]
+
+let newArr192_2 = arr192.slice(5);
+console.log(newArr192_2); // [ 6, 7, 8, 9 ]
+
+// 193 - Что выведет консоль?
+const add193 = x => x + x;
+
+function myFunc193(num = 2, value = add193(num)) {
+  console.log(num, value)
+}
+
+myFunc193(); // 2 4
+myFunc193(3); // 3 6
+
+// 194 - Что выведет консоль?
+const ages194 = [333, 111, 222];
+const reducer193  = (first, second) => first + second;
+console.log(ages194.reduce(reducer193)); // 666
+
+// 195 - Что выведет консоль?
+setTimeout(() => {
+  console.log('Прошло 2 сек'); // Прошло 2 сек
+})
+
+// 196 - Что выведет консоль?
+const timeStamp196 = Date.now();
+console.log(timeStamp196); // 1691418528675
+
+// 197 - Что выведет консоль?
+const randomNum197 = Math.random();
+console.log(randomNum197); // 0.2804338278101235
+
+// 198 - Что выведет консоль?
+const num198 = 3.1;
+const roundUp198 = Math.ceil(num198);
+console.log(roundUp198); // 4
+
+// 199 - Что выведет консоль?
+var i199 = 5;
+console.log(++i199); // 6
+
+// 200 - Что выведет консоль?
+const myAwesomeArray200 = [
+  { id: 1, name: "john" },
+  { id: 2, name: "Ali" },
+  { id: 3, name: "Mass" },
+]
+
+console.log(myAwesomeArray200.find(element => element.id === 3))
+//-------> Output : {id: 3, name: "Mass"}
+
+console.log(myAwesomeArray200.find(element => element.id === 7))
+//-------> Output : undefined
