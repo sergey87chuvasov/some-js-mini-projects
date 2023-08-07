@@ -1504,6 +1504,96 @@ const myAwesomeArray200 = [
 
 console.log(myAwesomeArray200.find(element => element.id === 3))
 //-------> Output : {id: 3, name: "Mass"}
-
 console.log(myAwesomeArray200.find(element => element.id === 7))
 //-------> Output : undefined
+
+// 201 - Что выведет консоль?
+console.log(i201); // undefined
+for ( var i201 = 0; i201 < 5; i201++) {
+console.log(i201); // 0 1 2 3 4
+}
+console.log(i201); // 5
+
+// 202 - Что выведет консоль?
+// some() - удовлетворяет ли какой-либо элемент массива условию
+// Он вернет значение true, если хотя бы один элемент совпадет с проверяемой функцией, и значение false — если нет.
+
+const myAwesomeArray202 = ["a", "b", "c", "d", "e"]
+myAwesomeArray202.some(test => test === "d")
+//-------> Output : true
+
+// 203 - Что выведет консоль?
+//  every() - Этот метод проверяет, удовлетворяют ли все элементы массива условию, заданному в передаваемой функции. Он вернет значение true, 
+// если каждый элемент совпадет с проверяемой функцией, и значение false — если нет.
+const myAwesomeArray203 = ["a", "b", "c", "d", "e"]
+
+myAwesomeArray203.every(test => test === "d")
+//-------> Output : false
+const myAwesomeArray203_2 = ["a", "a", "a", "a", "a"]
+myAwesomeArray203_2.every(test => test === "a")
+//-------> Output : true
+
+// 204 - Что выведет консоль?
+// flat() -  сглаживает вложенные массивы в массив верхнего уровня. - 1 уровня
+const myAwesomeArray204 = [[1, 2], [3, 4], 5]
+
+myAwesomeArray204.flat()
+//-------> Output : [1, 2, 3, 4, 5]
+
+// 205 - Что выведет консоль?
+// findIndex() - Он возвращает индекс найденного элемента, если элемент удовлетворяет условию или -1
+const myAwesomeArray205 = [
+  { id: 1, name: "john" },
+  { id: 2, name: "Ali" },
+  { id: 3, name: "Mass" },
+]
+
+myAwesomeArray205.findIndex(element => element.id === 3)
+//-------> Output : 2
+
+myAwesomeArray205.findIndex(element => element.id === 7)
+//-------> Output : -1
+
+// 206 - Что выведет консоль?
+// sort() - Этот метод принимает функцию в качестве параметра. Он сортирует элементы массива и возвращает их.
+const myAwesomeArray206 = [5, 4, 3, 2, 1]
+
+// Sort from smallest to largest
+myAwesomeArray206.sort((a, b) => a - b)
+//-------> Output : [1, 2, 3, 4, 5]
+
+// Sort from largest to smallest
+myAwesomeArray206.sort((a, b) => b - a)
+//-------> Output : [5, 4, 3, 2, 1]
+
+// 207 - Что выведет консоль?
+// concat() - Этот метод объединяет два или более массива/значения и возвращает новый массив.
+const myAwesomeArray207 = [1, 2, 3, 4, 5];
+const myAwesomeArray207_2 = [10, 20, 30, 40, 50];
+myAwesomeArray207.concat(myAwesomeArray207_2)
+//-------> Output : [1, 2, 3, 4, 5, 10, 20, 30, 40, 50]
+
+// 208 - Что выведет консоль?
+const myAwesomeArray208 = [1, 2, 3, 4, 5]
+// The first argument (0) is the value
+// The second argument (1) is the starting index
+// The third argument (3) is the ending index
+myAwesomeArray208.fill(0, 1, 3)
+//-------> Output : [1, 0, 0, 4, 5]
+
+// 209 - Что выведет консоль?
+//  reverse() - меняет порядок следования элементов в массиве на обратный.
+const myAwesomeArray209 = ["e", "d", "c", "b", "a"]
+myAwesomeArray209.reverse()
+//-------> Output : ['a', 'b', 'c', 'd', 'e']
+
+// 210 - Что выведет консоль?
+// flatMap() - Этот метод применяет функцию к каждому элементу массива, 
+// а затем сглаживает результат в новый массив. Он объединяет метод flat() и метод map() в одну функцию.
+
+const myAwesomeArray210 = [[1], [2], [3], [4], [5]]
+myAwesomeArray210.flatMap(arr => arr * 10)
+//-------> Output : [10, 20, 30, 40, 50]
+// With .flat() and .map()
+myAwesomeArray210.flat().map(arr => arr * 10)
+//-------> Output : [10, 20, 30, 40, 50]
