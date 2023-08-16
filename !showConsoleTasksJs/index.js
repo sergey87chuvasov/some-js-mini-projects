@@ -1597,3 +1597,102 @@ myAwesomeArray210.flatMap(arr => arr * 10)
 // With .flat() and .map()
 myAwesomeArray210.flat().map(arr => arr * 10)
 //-------> Output : [10, 20, 30, 40, 50]
+
+// 211 - Что выведет консоль?
+class Calc211 {
+  constructor() {
+    this.count = 0
+  }
+
+  increase() {
+    this.count++
+  }
+}
+
+const calc211 = new Calc211();
+new Calc211().increase();
+console.log(calc211.count); // 0
+calc211.increase();
+console.log(calc211.count); // 1
+
+// 212 - Что выведет консоль?
+// Объединение пустых дефолтных данных с пользовательскими данными из формы подписки
+    // с помощью оператора operator
+    const user212 = {
+      name: "",
+      email: "",
+      phoneNumber: "",
+    };
+
+    const newUser212 = {
+      name: "ReedBarger",
+      email: "reed@gmail.com",
+    };
+
+    /*
+      Последний объект при расширении заменяет значение одноимённых свойств предыдущего объекта на свои
+*/
+    const mergedUser212 = { ...user212, ...newUser212 };
+    console.log(mergedUser212) // { name: "ReedBarger", email: "reed@gmail.com", phoneNumber: "" };
+
+    // 213 - Что выведет консоль?
+let age213 = 26;
+let greeting213;
+
+if (age213 > 18) {
+  greeting = "Hello, fellow adult";
+} else {
+  greeting = "Hey kiddo";
+}
+
+//Тернарные операции делают то же самое, но намного короче
+const greeting213_2 = age213 > 18 ? "Hello, fellow adult" : "Hey kiddo";
+console.log(greeting213_2) // 'Hello, fellow adult';
+
+ // 214 - Что выведет консоль?
+
+ const asyncFn214 = async() => {
+  return 'Success!'
+ }
+
+ console.log(asyncFn214()); // Promise { 'Success!' }
+
+ // 215 - Что выведет консоль?
+ Promise.reject()
+ .catch(() => {
+  console.log('0') // 0 2
+  return Promise.reject()
+ })
+ .then(() => {
+  console.log('1')
+ })
+ .catch(() => {
+  console.log('2')
+ })
+
+ // 216 - Что выведет консоль?
+ const obj216 = {name: 'Serge', age: 33};
+ const jsonString = JSON.stringify(obj216);
+ console.log(obj216); // '{'name': 'Serge', 'age': 33}'
+
+ // 217 - Что выведет консоль?
+ var x217 = 10;
+ var y217 = 20
+ console.log(x217++ - ++y217 + x217++); // 0   тк 10 - 21 + 11
+
+ // 218 - Что выведет консоль?
+ var a218 = 1;
+ function f218() {
+  console.log(a218); // undefined
+  var a218 = 5;
+ }
+ f218()
+
+ // 219 - Что выведет консоль?
+ var test219 = {name: 'Serge'};
+ console.log(typeof test219); // object
+
+  // 220 - Что выведет консоль?
+  const a220 = [1,2,3];
+  const b220 = [a220, 4, 5];
+  console.log(b220); // [ [ 1, 2, 3 ], 4, 5 ]
