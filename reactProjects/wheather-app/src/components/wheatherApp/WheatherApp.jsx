@@ -1,4 +1,5 @@
 import './WheatherApp.css'
+import { useState } from 'react';
 
 import search_icon from '../assets/search.png';
 import clear_icon from '../assets/clear.png';
@@ -12,6 +13,8 @@ import humidity_icon from '../assets/humidity.png';
 const WheatherApp = () => {
 
     let api_key = 'ef1c3da20737a13b4cc1d32a1d918269';
+
+    const [wicon, setWicon] = useState(cloud_icon);
 
     const search = async () => {
         const element = document.getElementsByClassName('cityInput');
@@ -31,7 +34,36 @@ const WheatherApp = () => {
     const humidity = document.getElementsByClassName('humidity-percent');
     const wind = document.getElementsByClassName('wind-rate');
     const temperature = document.getElementsByClassName('weather-temp');
-    const location = document.getElementsByClassName('weather-location')
+    const location = document.getElementsByClassName('weather-location');
+
+    humidity[0].innerHTML = data.main.humidity + ' %';
+    wind[0].innerHTML = Math.floor(data.wind.speed) + ' km/h';
+    temperature[0].innerHTML = Math.floor(data.main.temp) + ' °C';
+    location[0].innerHTML = data.name;
+
+    if(data.weather[0].icon === '01d' || data.weather[0].icon === '01n') {
+        setWicon(clear_icon)
+    }
+    else if (data.weather[0].icon === '02d' || data.weather[0].icon === '02n') {
+        setWicon(cloud_icon)
+    }
+    else if (data.weather[0].icon === '03d' || data.weather[0].icon === '03n') {
+        setWicon(drizzle_icon)
+    }
+    else if (data.weather[0].icon === '04d' || data.weather[0].icon === '04n') {
+        setWicon(drizzle_icon)
+    }
+    else if (data.weather[0].icon === '09d' || data.weather[0].icon === '09n') {
+        setWicon(rain_icon)
+    }
+    else if (data.weather[0].icon === '10d' || data.weather[0].icon === '10n') {
+        setWicon(rain_icon)
+    }
+    else if (data.weather[0].icon === '13d' || data.weather[0].icon === '13n') {
+        setWicon(snow_icon)
+    } else {
+        setWicon(clear_icon)
+    }
     
     };
 
@@ -45,7 +77,7 @@ const WheatherApp = () => {
                 </div>
             </div>
             <div className="weather-image">
-                <img src={cloud_icon} alt="wheather pic icon" />
+                <img src={wicon} alt="wheather pic icon" />
             </div>
             <div className="weather-temp">24 °C</div>
             <div className="weather-location">London</div>
