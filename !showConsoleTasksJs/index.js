@@ -1696,3 +1696,68 @@ console.log(greeting213_2) // 'Hello, fellow adult';
   const a220 = [1,2,3];
   const b220 = [a220, 4, 5];
   console.log(b220); // [ [ 1, 2, 3 ], 4, 5 ]
+
+  // 221 - Что выведет консоль?
+  async function func221() {
+    return 1
+  }
+
+  console.log(typeof func221()); // object
+
+  // 222 - Что выведет консоль?
+  let a222 = 1;
+  let c222 = a222+++1;
+  console.log(c222); // 2
+
+  // 223 - Что выведет консоль?
+  const arr223 = [1,2,3,4,5,6];
+  const newArr223 = arr223.slice(0,2);
+  console.log(newArr223); // [ 1, 2 ]
+
+  // 224 - Что выведет консоль?
+  let x224 = 10;
+  let y224 = '5';
+  console.log(x224 + y224); // 105
+
+  // 225 - Что выведет консоль?
+  const a225 = {
+    firstName: 'Serge',
+  }
+  const b225 = {
+    firstName: 'Serge',
+  }
+
+  console.log(a225.firstName === b225.firstName); // true
+
+  // 226 - Что выведет консоль?
+  function abc226() {
+    return typeof arguments;
+  }
+
+  console.log(abc226()); // object
+
+  // 227 - Что выведет консоль?
+  function test227() {
+    var x = 99;
+    if(x > 88) {
+      x = 111
+    }
+    console.log(x); // 111
+  }
+
+  test227();
+
+  // 228 - Что выведет консоль?
+  console.log(+false); // 0
+  console.log(+true); // 1
+  console.log(+null); // 0
+  console.log(null + undefined); // NaN
+
+  // 229 - Что выведет консоль?
+  let a229 = (1,5 - 1) * 2;
+  console.log(a229); // 8
+
+  // 230 - Что выведет консоль?
+  let x230 = 5;
+  console.log(x230++); // 5
+  console.log(x230); // 6
